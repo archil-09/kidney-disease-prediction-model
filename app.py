@@ -5,13 +5,13 @@ import pickle
 
 # Load the encoder, scaler, and trained model from saved files
 import os
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-scaler_path = os.path.join(BASE_DIR, 'scaler.pkl')
+scaler_path = os.path.join(BASE_DIR, 'models', 'scaler.pkl')
+model_path = os.path.join(BASE_DIR, 'models', 'Model_new.pkl')
 
 scaler = pickle.load(open(scaler_path, 'rb'))
-model_path = os.path.join(BASE_DIR, 'Model_new.pkl')
-Model = pickle.load(open(model_path, 'rb'))
+model = pickle.load(open(model_path, 'rb'))
+
 def predict_chronic_disease(age, bp, sg, al, hemo, sc, htn, dm, cad, appet, pc):
     # Create a DataFrame with input variables, following the correct order
     data_dict = {
