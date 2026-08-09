@@ -11,6 +11,7 @@ scaler_path = os.path.join(BASE_DIR, 'scaler.pkl')
 
 scaler = pickle.load(open(scaler_path, 'rb'))
 model_path = os.path.join(BASE_DIR, 'Model_new.pkl')
+Model = pickle.load(open(model_path, 'rb'))
 def predict_chronic_disease(age, bp, sg, al, hemo, sc, htn, dm, cad, appet, pc):
     # Create a DataFrame with input variables, following the correct order
     data_dict = {
@@ -78,4 +79,4 @@ if st.button('Predict'):
     if result == 1:
         st.write("### The patient has Chronic Kidney Disease (CKD).")
     else:
-        st.write("### The patient does not have Chronic Kidney Disease (CKD).")pip
+        st.write("### The patient does not have Chronic Kidney Disease (CKD).")
