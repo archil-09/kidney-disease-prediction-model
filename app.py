@@ -41,7 +41,7 @@ def predict_chronic_disease(age, bp, sg, al, hemo, sc, htn, dm, cad, appet, pc):
     data[numeric_cols] = scaler.transform(data[numeric_cols])
 
     # Make the prediction
-    prediction = Model.predict(data)
+    prediction = model.predict(data)
 
     # Return the predicted class
     return prediction[0]
